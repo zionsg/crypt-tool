@@ -16,5 +16,9 @@ if (! $ciphertext) {
 echo "Ciphertext (trimmed):\n";
 echo $ciphertext, "\n\n";
 
-echo "Decrypted plaintext:\n";
-echo $app->decrypt(trim($ciphertext)), "\n\n";
+$result = $app->decrypt(trim($ciphertext));
+if (false === $result) {
+    echo "Unable to decrypt ciphertext with given key\n\n";
+} else {
+    echo "Decrypted plaintext:\n", $result, "\n\n";
+}

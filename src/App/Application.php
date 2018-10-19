@@ -16,11 +16,19 @@ class Application
         $this->blockCipher->setKey($key);
     }
 
+    /**
+     * @param  string $plaintext
+     * @return string
+     */
     public function encrypt($plaintext)
     {
         return $this->blockCipher->encrypt($plaintext);
     }
 
+    /**
+     * @param  string $ciphertext
+     * @return string|boolean Boolean false returned if unable to decrypt ciphertext
+     */
     public function decrypt($ciphertext)
     {
         return $this->blockCipher->decrypt($ciphertext);
