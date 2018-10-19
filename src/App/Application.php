@@ -12,7 +12,7 @@ class Application
     {
         $this->config = array_merge($this->config, $config);
         $key = $config['key'] ?? '';
-        $this->blockCipher = BlockCipher::factory('openssl', array('algo' => 'aes'));
+        $this->blockCipher = BlockCipher::factory('openssl', ['algo' => 'aes']);
         $this->blockCipher->setKey($key);
     }
 
